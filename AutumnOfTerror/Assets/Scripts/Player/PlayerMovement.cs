@@ -3,26 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//usage: put this on a cube with a Rigidbody
-//intent: control all aspects of player movement including: directional movement, jumping, picking up items 
+/// <summary>
+/// SINGLETON
+/// Put this on the player to handle basic movement
+/// </summary>
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    //PlayerMovement is a singleton. It can be accessed from anywhere in the scene via PlayerMovement.Instance.()
+    private static PlayerMovement _instance;
+    public static PlayerMovement Instance { get { return _instance; } }
+
     //variables to handle player movement
-    Rigidbody rigidBody;
-    Vector3 input;
+    private Rigidbody rigidBody;
+    private Vector3 input;
     bool isGrounded;
     public float jumpForce;
 
     private float speed;
 
-    //public AudioSource footstepPlayer;
+    void Awake()
+    {
+        //singleton pattern
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+    }
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-
+        
         speed = 5f;
     }
 
