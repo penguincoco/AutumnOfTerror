@@ -10,18 +10,17 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     //variables to handle player movement
-    Rigidbody rigidBody;
-    Vector3 input;
+    private Rigidbody rigidBody;
+    private Vector3 input;
     bool isGrounded;
     public float jumpForce;
 
     private float speed;
 
-    //public AudioSource footstepPlayer;
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        
 
         speed = 5f;
     }
