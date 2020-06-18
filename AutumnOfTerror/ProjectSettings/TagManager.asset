@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickupable Item
+  - Clue
   layers:
   - Default
   - TransparentFX
