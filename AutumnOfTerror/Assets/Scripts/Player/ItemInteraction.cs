@@ -60,6 +60,11 @@ public class ItemInteraction : MonoBehaviour
         holdingObject = item;
         Debug.Log(item.name);
         item.GetComponent<Rigidbody>().useGravity = false;
+        item.GetComponent<Rigidbody>().isKinematic = true;
+
+        item.GetComponent<BoxCollider>().enabled = false;
+
+        destination.GetComponent<BoxCollider>().enabled = true;
 
         item.transform.position = destination.position;
 
@@ -69,6 +74,11 @@ public class ItemInteraction : MonoBehaviour
     public void Drop(GameObject item)
     {
         item.GetComponent<Rigidbody>().useGravity = true;
+        item.GetComponent<Rigidbody>().isKinematic = false;
+
+        item.GetComponent<BoxCollider>().enabled = true;
+
+        destination.GetComponent<BoxCollider>().enabled = false;
         item.transform.parent = null;           //unparent player
         holdingObject = null;                   //set holding to empty
     }
