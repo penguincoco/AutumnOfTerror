@@ -6,6 +6,11 @@ public class MouseLook : MonoBehaviour
 {
     float verticalAngle = 0f;
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     // Update is called once per frame
     void Update()
     {

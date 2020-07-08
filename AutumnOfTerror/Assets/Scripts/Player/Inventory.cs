@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+
     public InventoryObject inventory;
 
     public Canvas inventoryCanvas;
@@ -24,15 +25,20 @@ public class Inventory : MonoBehaviour
 
     void ToggleInventoryShow()
     {
-        if (inventoryCanvas.enabled)
+        if (!inventoryCanvas.enabled)
         {
-            Debug.Log("Enabling");
-            inventoryCanvas.enabled = false;
+            //When the inventory is enabled, freeze player movement, camera movement and make cursor visible 
+            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
+            this.gameObject.GetComponent<PlayerMovement>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            inventoryCanvas.enabled = true;
         }
         else
         {
-            Debug.Log("Disabling");
-            inventoryCanvas.enabled = true;
+            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
+            this.gameObject.GetComponent<PlayerMovement>().enabled = true;
+            inventoryCanvas.enabled = false;
         }
     }
 

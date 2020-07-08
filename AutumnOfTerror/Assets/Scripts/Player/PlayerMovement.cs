@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float speed;
 
+    public string equippedObj;
+
     void Awake()
     {
         //singleton pattern
@@ -52,5 +54,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.velocity = new Vector3(input.x * speed, rigidBody.velocity.y, input.z * speed);
+    }
+
+    public void SetEquippedObject(string objName)
+    {
+        equippedObj = objName;
+    }
+
+    public string GetEquippedObject()
+    {
+        return equippedObj;
     }
 }
