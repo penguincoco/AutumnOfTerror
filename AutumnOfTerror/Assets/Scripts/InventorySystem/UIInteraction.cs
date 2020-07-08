@@ -33,7 +33,7 @@ public class UIInteraction : EventTrigger
     public void ClickObj()
     {
         Debug.Log("Clicking on object: " + gameObject.name);
-        PlayerMovement.Instance.SetEquippedObject(gameObject.name);
+        Inventory.Instance.SetEquippedObject(gameObject.name);
     }
 
     public void SetName(string name)
