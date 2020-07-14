@@ -5,9 +5,23 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    private static Inventory _instance;
+    public static Inventory Instance { get { return _instance; } }
+
     public InventoryObject inventory;
 
     public Canvas inventoryCanvas;
+
+    public string equippedObj;
+
+    void Awake()
+    {
+        //singleton pattern
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+    }
 
     void Start()
     {
@@ -24,15 +38,20 @@ public class Inventory : MonoBehaviour
 
     void ToggleInventoryShow()
     {
-        if (inventoryCanvas.enabled)
+        if (!inventoryCanvas.enabled)
         {
-            Debug.Log("Enabling");
-            inventoryCanvas.enabled = false;
+            //When the inventory is enabled, freeze player movement, camera movement and make cursor visible 
+            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
+            this.gameObject.GetComponent<PlayerMovement>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            inventoryCanvas.enabled = true;
         }
         else
         {
-            Debug.Log("Disabling");
-            inventoryCanvas.enabled = true;
+            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
+            this.gameObject.GetComponent<PlayerMovement>().enabled = true;
+            inventoryCanvas.enabled = false;
         }
     }
 
@@ -49,5 +68,15 @@ public class Inventory : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.container.Clear();
+    }
+
+    public void SetEquippedObject(string objName)
+    {
+        equippedObj = objName;
+    }
+
+    public string GetEquippedObject()
+    {
+        return equippedObj;
     }
 }
