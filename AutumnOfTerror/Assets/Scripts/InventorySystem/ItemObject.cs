@@ -8,5 +8,4 @@ public class ItemObject : ScriptableObject
 {
     public GameObject prefab;
     public string name;
-    public string[] objOwner;
 }

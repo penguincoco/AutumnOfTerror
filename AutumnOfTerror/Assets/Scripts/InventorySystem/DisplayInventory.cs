@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Specialized;
 
 public class DisplayInventory : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class DisplayInventory : MonoBehaviour
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
+    public GameObject objSquareSprite; 
+
     void Awake()
     {
         //singleton pattern
@@ -33,13 +36,7 @@ public class DisplayInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //CreateDisplay();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //CreateDisplay();
+        CreateDisplay();
     }
 
     public void UpdateDisplay()
@@ -51,11 +48,10 @@ public class DisplayInventory : MonoBehaviour
 
     public void CreateDisplay()
     {
-        Debug.Log(inventory.container.Count);
-        for (int i = 0; i < inventory.container.Count; i++)
+        for (int i = 0; i < 16; i++)
         {
-            var obj = Instantiate(inventory.container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+            GameObject objSquare = Instantiate(objSquareSprite, Vector3.zero, Quaternion.identity, transform);
+            objSquare.GetComponent<RectTransform>().localPosition = GetPosition(i);
         }
     }
 
