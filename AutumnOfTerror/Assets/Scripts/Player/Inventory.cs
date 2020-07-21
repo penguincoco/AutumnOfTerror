@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class Inventory : MonoBehaviour
     public InventoryObject inventory;
 
     public Canvas inventoryCanvas;
+    public Canvas notebookCanvas;
+
+    private bool UIOpen = false;
 
     public string equippedObj;
 
@@ -25,33 +29,82 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        inventoryCanvas.enabled = false;
+        inventoryCanvas.enabled = UIOpen;
+        notebookCanvas.enabled = UIOpen;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        //if (Input.GetKeyDown(KeyCode.P) && !notebookCanvas.enabled)
+        //{
+        //    ToggleInventoryShow();
+        //}
+        ////    if (Input.GetKeyDown(KeyCode.P))
+        ////    {
+        ////        ToggleInventoryShow();
+        ////    }
+
+        //if (UIOpen)
+        //{
+        //    ToggleNotebook();
+        //}
+
+        OpenCloseUI();
+    }
+
+    void OpenCloseUI()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleInventoryShow();
+            if (UIOpen)
+            {
+                UIOpen = false;
+                inventoryCanvas.enabled = UIOpen;
+                notebookCanvas.enabled = UIOpen;
+                CloseUI();
+            }
+            else    //opening the UI always leads to inventory first
+            {
+                UIOpen = true;
+                inventoryCanvas.enabled = UIOpen;
+                OpenUI();
+            }
+        }
+
+        if (UIOpen)
+        {
+            UIToggle();
         }
     }
 
-    void ToggleInventoryShow()
+    void OpenUI()
     {
-        if (!inventoryCanvas.enabled)
+        this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
+        this.gameObject.GetComponent<PlayerMovement>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        inventoryCanvas.enabled = true;
+    }
+
+    void CloseUI()
+    {
+        this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
+        this.gameObject.GetComponent<PlayerMovement>().enabled = true;
+        inventoryCanvas.enabled = false;
+        UIOpen = false;
+    }
+
+    void UIToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow) && inventoryCanvas.enabled)
         {
-            //When the inventory is enabled, freeze player movement, camera movement and make cursor visible 
-            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
-            this.gameObject.GetComponent<PlayerMovement>().enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            inventoryCanvas.enabled = true;
-        }
-        else
-        {
-            this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
-            this.gameObject.GetComponent<PlayerMovement>().enabled = true;
             inventoryCanvas.enabled = false;
+            notebookCanvas.enabled = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && notebookCanvas.enabled)
+        {
+            inventoryCanvas.enabled = true;
+            notebookCanvas.enabled = false;
         }
     }
 
