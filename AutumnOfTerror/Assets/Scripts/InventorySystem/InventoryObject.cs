@@ -9,7 +9,7 @@ public class InventoryObject : ScriptableObject
 
     public void AddItem(ItemObject _item)
     {
-        container.Add(new InventorySlot(_item));    //this assumes you can never pick up the same object. No "hat x3" or whatever
+        container.Add(new InventorySlot(_item));   
         DisplayInventory.Instance.UpdateDisplay();
     }
 }

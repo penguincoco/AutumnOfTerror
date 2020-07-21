@@ -1281,26 +1281,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 617864377}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &995687752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2118675897473352854, guid: 09027aa0e78cf734ab5fa9076b183f19,
-    type: 3}
-  m_PrefabInstance: {fileID: 1271815344959343545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &995687761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995687752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7747b63c948eec48a385e9df6867138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 634a229e605796c458bab71576b0eafc, type: 2}
-  inventoryCanvas: {fileID: 1930924090}
 --- !u!1001 &1045202318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3225,11 +3205,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1271815345001110375, guid: 09027aa0e78cf734ab5fa9076b183f19,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 995687761, guid: 09027aa0e78cf734ab5fa9076b183f19, type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1930924090}
     - target: {fileID: 1597894051454295596, guid: 09027aa0e78cf734ab5fa9076b183f19,
         type: 3}
       propertyPath: m_LocalPosition.x
