@@ -8,35 +8,55 @@ using UnityEngine;
 /// </summary>
 public class NPCObject : ScriptableObject
 {
-    public string name;
-    public string sex;
-    public string address;
-    public string occupation;
-
-    // public List<string> dialogue;
-    public string[] dialogue;
+    public string[] NPCData;
     public TextAsset NPCFile;
 
-    void Awake()
+    public string name;
+    public string sex;
+    public string occupation;
+    public string address;
+
+    public List<string> suspectEvidence;
+
+    public virtual void OnEnable()
     {
         Parse();
-        name = dialogue[0];
-        sex = dialogue[1];
-        occupation = dialogue[2];
+        SetDefaultFields();
+
+        //Set suspect evidence data if there is any
+        if (NPCData.Length > 4)
+        {
+            Debug.Log("Setting suspect evidence");
+            SetSuspectFields();
+        }
     }
 
-    //Note on setting up the file to parse: 
-    //ShowDialogue() gets called every time we exit a window in the rhythm game, so if you want a specific line to stay up
-    //for multiple notes (that the player hits, not notes in the song), then put an empty, new line between spoken lines!! 
+
     private void Parse()
     {
         string text = NPCFile.text;
 
-        dialogue = text.Split('\n');
+        NPCData = text.Split('\n');
 
-        foreach (string line in dialogue)
+        foreach (string line in NPCData)
         {
             Debug.Log(line);
+        }
+    }
+
+    public void SetDefaultFields()
+    {
+        name = NPCData[0];
+        sex = NPCData[1];
+        address = NPCData[2];
+        occupation = NPCData[3];
+    }
+
+    public void SetSuspectFields()
+    {
+        for (int i = 4; i < NPCData.Length; i++)
+        {
+            suspectEvidence.Add(NPCData[i]);
         }
     }
 }
