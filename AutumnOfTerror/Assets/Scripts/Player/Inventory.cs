@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
 
     void OpenCloseUI()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (UIOpen)
             {
@@ -128,6 +128,7 @@ public class Inventory : MonoBehaviour
         equippedObj = objName;
     }
 
+    //Call this with Inventory.Instance.GetEquippedObject()
     public string GetEquippedObject()
     {
         return equippedObj;
