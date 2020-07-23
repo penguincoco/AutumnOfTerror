@@ -7,7 +7,10 @@ using TMPro;
 public class Notebook : MonoBehaviour
 {
     public List<NPCObject> NPCs;
-    public TextMeshProUGUI NPCData;
+    public TextMeshProUGUI name;
+    public TextMeshProUGUI sex;
+    public TextMeshProUGUI occupation;
+    public TextMeshProUGUI address;
     public int counter = 0;
 
     void Update()
@@ -25,8 +28,20 @@ public class Notebook : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            NPCData.text = NPCs[counter].name;
+            name.text = NPCs[counter].name;
+            sex.text = NPCs[counter].sex;
+            occupation.text = NPCs[counter].occupation;
+            address.text = NPCs[counter].address;
+
             counter++;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        foreach (NPCObject npc in NPCs)
+        {
+            npc.suspectEvidence.Clear();
         }
     }
 }
