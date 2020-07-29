@@ -2262,6 +2262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2582388f153cf4284624c6c1877024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectTimeAndDialogue:
+    objectTimeAndDialogueList: []
+  trialJSon: {fileID: 4900000, guid: 5833510e47fb18346832c94f83b04ec7, type: 3}
 --- !u!4 &986610230
 Transform:
   m_ObjectHideFlags: 0

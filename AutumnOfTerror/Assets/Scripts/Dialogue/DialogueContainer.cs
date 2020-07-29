@@ -1,15 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DialogueContainer : MonoBehaviour
 {
-    private ObjectTimeAndDialogueList objectTimeAndDialogueList;
+    public ObjectTimeAndDialogueList objectTimeAndDialogue;
     Dictionary<string, ObjectTimeAndDialogue> dialogue;
+
+    public TextAsset trialJSon;
     // Start is called before the first frame update
     void Start()
     {
-        print(JsonUtility.ToJson(objectTimeAndDialogueList).ToString());
+        //print(JsonUtility.ToJson(objectTimeAndDialogue).ToString());
+        objectTimeAndDialogue = JsonUtility.FromJson<ObjectTimeAndDialogueList>(trialJSon.ToString());
+        foreach (ObjectTimeAndDialogue ob in objectTimeAndDialogue.objectTimeAndDialogueList)
+        {
+            dialogue.Add(ob.objectName, ob);
+            dialogue.Add(ob.time, ob);
+        }
+
+        //for(int i = 0; i < objectTimeAndDialogue.)
     }
 
     // Update is called once per frame
