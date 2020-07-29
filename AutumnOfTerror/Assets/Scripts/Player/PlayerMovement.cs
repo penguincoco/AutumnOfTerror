@@ -19,9 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rigidBody;
     private Vector3 input;
     bool isGrounded;
-    public float jumpForce;
 
-    private float speed;
+    public float speed;
 
     void Awake()
     {
@@ -35,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        
-        speed = 5f;
     }
 
     void Update()

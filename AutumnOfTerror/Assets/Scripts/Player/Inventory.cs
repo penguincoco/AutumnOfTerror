@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Inventory : MonoBehaviour
 
     public Canvas inventoryCanvas;
     public Canvas notebookCanvas;
+    public GameObject NPCPages;
 
     private bool UIOpen = false;
 
@@ -35,20 +37,6 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.P) && !notebookCanvas.enabled)
-        //{
-        //    ToggleInventoryShow();
-        //}
-        ////    if (Input.GetKeyDown(KeyCode.P))
-        ////    {
-        ////        ToggleInventoryShow();
-        ////    }
-
-        //if (UIOpen)
-        //{
-        //    ToggleNotebook();
-        //}
-
         OpenCloseUI();
     }
 
@@ -60,6 +48,11 @@ public class Inventory : MonoBehaviour
             {
                 UIOpen = false;
                 inventoryCanvas.enabled = UIOpen;
+                notebookCanvas.gameObject.transform.GetChild(2).gameObject.SetActive(true);        //open the TOC
+                foreach (Transform NPCPage in NPCPages.transform)                                  //close whatever page was open, if player closed menu on a page
+                {
+                    NPCPage.gameObject.GetComponent<NPCPage>().HideData();
+                }
                 notebookCanvas.enabled = UIOpen;
                 CloseUI();
             }
