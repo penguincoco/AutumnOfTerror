@@ -74,6 +74,7 @@ public class Inventory : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
         this.gameObject.GetComponent<PlayerMovement>().enabled = false;
+        Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         inventoryCanvas.enabled = true;
@@ -83,6 +84,7 @@ public class Inventory : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).GetComponent<MouseLook>().enabled = true;
         this.gameObject.GetComponent<PlayerMovement>().enabled = true;
+        Time.timeScale = 1f;
         inventoryCanvas.enabled = false;
         UIOpen = false;
     }

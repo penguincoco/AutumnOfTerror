@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 65919056}
   - component: {fileID: 65919055}
   - component: {fileID: 65919054}
+  - component: {fileID: 65919057}
   m_Layer: 0
   m_Name: Neighbourhood
   m_TagString: Untagged
@@ -962,6 +963,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65919052}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &65919057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65919052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aedf879569de5418044df79de6f0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryName: Neighbourhood
 --- !u!4 &74482330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 61203f54f2f36314c83f2f473019c19c,
@@ -8129,6 +8143,7 @@ GameObject:
   - component: {fileID: 434613319}
   - component: {fileID: 434613318}
   - component: {fileID: 434613317}
+  - component: {fileID: 434613320}
   m_Layer: 0
   m_Name: Docks
   m_TagString: Untagged
@@ -8210,6 +8225,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434613315}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &434613320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434613315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aedf879569de5418044df79de6f0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryName: Docks
 --- !u!1001 &435824498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19593,6 +19621,7 @@ GameObject:
   - component: {fileID: 1076734203}
   - component: {fileID: 1076734202}
   - component: {fileID: 1076734201}
+  - component: {fileID: 1076734204}
   m_Layer: 0
   m_Name: Pub
   m_TagString: Untagged
@@ -19674,6 +19703,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076734199}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1076734204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076734199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aedf879569de5418044df79de6f0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryName: Pub
 --- !u!1001 &1076873944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22939,6 +22981,7 @@ GameObject:
   - component: {fileID: 1192276681}
   - component: {fileID: 1192276680}
   - component: {fileID: 1192276679}
+  - component: {fileID: 1192276682}
   m_Layer: 0
   m_Name: PoliceStation
   m_TagString: Untagged
@@ -23020,6 +23063,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192276677}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1192276682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192276677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aedf879569de5418044df79de6f0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryName: PoliceStation
 --- !u!1 &1202414630
 GameObject:
   m_ObjectHideFlags: 0
