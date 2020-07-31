@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7166f3c173b2e2349a17af147651b7ce, type: 3}
-  m_Name: Scissors
+  m_Script: {fileID: 11500000, guid: 9ce8e142d856e54488c9fca6e8dc6343, type: 3}
+  m_Name: Apron
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7583834253064060165, guid: 8dcee1e1740081045b1b2722e4bbcd83, type: 3}
-  name: Scissors
-  owners: []
+  prefab: {fileID: 3538357442695984676, guid: 0cb4f1bbbaf85ee4b9305d45ea4231d2, type: 3}
+  name: Apron

@@ -16,6 +16,8 @@ public class SceneChanger : MonoBehaviour
     private static SceneChanger _instance;
     public static SceneChanger Instance { get { return _instance; } }
 
+    public Dictionary<string, System.Action> sceneDict = new Dictionary<string, System.Action>();
+
     void Awake()
     {
         //singleton pattern
@@ -25,18 +27,22 @@ public class SceneChanger : MonoBehaviour
             _instance = this;
     }
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("Calling");
-            LoadPub();
-        }
+        sceneDict.Add("MainStreet", LoadMainStreet);
+        sceneDict.Add("PoliceStation", LoadPoliceStation);
+        sceneDict.Add("Pub", LoadPub);
+        sceneDict.Add("Neighbourhood", LoadNeighbourhood);
+        sceneDict.Add("Docks", LoadDocks);
+    }
+
+    public void LoadScene(string sceneToLoad)
+    {
+        sceneDict[sceneToLoad]();
     }
 
     public void LoadMainStreet()
     {
-        Debug.Log("Changing");
         SceneManager.LoadScene(0);
     }
 
