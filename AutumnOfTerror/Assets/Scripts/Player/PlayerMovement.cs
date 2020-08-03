@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     //variables to handle player movement
     private Rigidbody rigidBody;
     private Vector3 input;
-    bool isGrounded;
 
     public float speed;
 
@@ -49,5 +48,10 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.velocity = new Vector3(input.x * speed, rigidBody.velocity.y, input.z * speed);
+    }
+
+    public void SetPosition(Vector3 newPos)
+    {
+        this.gameObject.transform.position = newPos;
     }
 }

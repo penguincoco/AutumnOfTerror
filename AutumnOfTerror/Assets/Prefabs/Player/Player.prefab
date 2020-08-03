@@ -310,8 +310,6 @@ GameObject:
   - component: {fileID: 1271815344155209852}
   - component: {fileID: 1271815344155209843}
   - component: {fileID: 1271815344155209853}
-  - component: {fileID: 1271815344155209855}
-  - component: {fileID: 1271815344155209854}
   - component: {fileID: 995687761}
   m_Layer: 0
   m_Name: Player
@@ -426,32 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
---- !u!114 &1271815344155209855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118675897473352854}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb5f0defe0cc0c4d969d7cf611b638d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {fileID: 1271815343638965999}
---- !u!114 &1271815344155209854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118675897473352854}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ef7fe1387314d45b8e594656411261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeTime: 5
 --- !u!114 &995687761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +439,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 634a229e605796c458bab71576b0eafc, type: 2}
   inventoryCanvas: {fileID: 0}
   notebookCanvas: {fileID: 0}
+  HUDCanvas: {fileID: 0}
   NPCPages: {fileID: 0}
   equippedObj: 
 --- !u!1001 &1815753406480500208
@@ -535,6 +508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostProcessingVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483669461480753790, guid: 448581ca325ea9241b4db5bea9bf4390,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448581ca325ea9241b4db5bea9bf4390, type: 3}

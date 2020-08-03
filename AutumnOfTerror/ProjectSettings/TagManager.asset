@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickupable Item
   - Clue
+  - Player Teleport Spot
   layers:
   - Default
   - TransparentFX

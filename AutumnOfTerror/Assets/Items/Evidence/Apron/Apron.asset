@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3538357442695984676, guid: 0cb4f1bbbaf85ee4b9305d45ea4231d2, type: 3}
   name: Apron
+  description: A leather apron

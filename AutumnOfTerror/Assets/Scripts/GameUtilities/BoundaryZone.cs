@@ -16,6 +16,6 @@ public class BoundaryZone : MonoBehaviour
 
     void Teleport(string teleportTo)
     {
-        SceneChanger.Instance.LoadScene(teleportTo);
+        GameManager.Instance.LoadScene(teleportTo);
     }
 }

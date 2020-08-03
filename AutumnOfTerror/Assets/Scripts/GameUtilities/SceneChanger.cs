@@ -16,7 +16,10 @@ public class SceneChanger : MonoBehaviour
     private static SceneChanger _instance;
     public static SceneChanger Instance { get { return _instance; } }
 
+    //Note: System.Action MUST return VOID. 
     public Dictionary<string, System.Action> sceneDict = new Dictionary<string, System.Action>();
+
+    [SerializeField] private string currentScene;
 
     void Awake()
     {
@@ -41,28 +44,65 @@ public class SceneChanger : MonoBehaviour
         sceneDict[sceneToLoad]();
     }
 
+    //different functions for teleporting to each different scene. 
     public void LoadMainStreet()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(Load(0, 1.5f));
     }
 
     public void LoadPoliceStation()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        StartCoroutine(Load(1, 1.5f));
     }
 
     public void LoadPub()
     {
         SceneManager.LoadScene(2);
+        StartCoroutine(Load(2, 1.5f));
     }
 
     public void LoadNeighbourhood()
     {
         SceneManager.LoadScene(3);
+        StartCoroutine(Load(3, 1.5f));
     }
 
     public void LoadDocks()
     {
-        SceneManager.LoadScene(3);
+        //SceneManager.LoadScene(4);
+        StartCoroutine(Load(4, 1.5f));
+    }
+
+    //kind of spaghetti, but all Load methods are overloaded, because functions with a return type cannot be stored in a dictionary (at least not to my pea brained knowledge lmao) 
+    //This HAS to be a coroutine because FindWithTag does not work the immediate second after loading a scene. 
+    //Idea: This coroutine can be general. Every other function can call it, every other function just have to give it a number parameter for the scene to load! :o 
+    private IEnumerator Load(int sceneIndex, float waitTime)
+    {
+        string currSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneIndex);
+        yield return new WaitForSeconds(waitTime);
+
+        //some scenes have multiple entry points (like the main street, oof)
+        GameObject[] teleportObjs = GameObject.FindGameObjectsWithTag("Player Teleport Spot");
+
+        Vector3 teleportSpot = new Vector3(0f, 0f, 0f);
+        //based on the scene we were just in, select the start position for the scene the player is entering
+        //loop through all the names of the teleportObjs until we find one that contains the name of the previous scene
+        foreach (GameObject teleportObj in teleportObjs)
+        {
+            Debug.Log(teleportObj.name);
+            if (teleportObj.name.Contains(currSceneName))
+            {
+                teleportSpot = teleportObj.transform.position;
+                break;
+            }
+        }
+
+        //GameObject teleportObj = GameObject.FindWithTag("Player Teleport Spot");
+        //Debug.Log(teleportObj.name);
+
+        //Vector3 teleportSpot = teleportObj.transform.position;
+        PlayerMovement.Instance.SetPosition(teleportSpot);
     }
 }
