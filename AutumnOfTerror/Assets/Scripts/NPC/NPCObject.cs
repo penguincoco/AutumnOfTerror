@@ -26,7 +26,7 @@ public class NPCObject : ScriptableObject
         //Set suspect evidence data if there is any
         if (NPCData.Length > 4)
         {
-            Debug.Log("Setting suspect evidence");
+            //Debug.Log("Setting suspect evidence");
             SetSuspectFields();
         }
     }
@@ -38,10 +38,10 @@ public class NPCObject : ScriptableObject
 
         NPCData = text.Split('\n');
 
-        foreach (string line in NPCData)
-        {
-            Debug.Log(line);
-        }
+        //foreach (string line in NPCData)
+        //{
+        //    Debug.Log(line);
+        //}
     }
 
     public void SetDefaultFields()

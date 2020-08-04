@@ -22,7 +22,15 @@ public class DisplayInventory : MonoBehaviour
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
-    public GameObject objSquareSprite; 
+    public GameObject objSquareSprite;
+
+    //clicking on an object allows the player to look at it closer and provide a small description of the object
+    public GameObject observingPanel;
+    public Image observingImg;
+    public string description;
+    public Sprite blankImg;
+
+    public TextMeshProUGUI descriptionText;
 
     void Awake()
     {
@@ -58,5 +66,19 @@ public class DisplayInventory : MonoBehaviour
     public Vector3 GetPosition(int pos)
     {
         return new Vector3(x_start + (xSpaceBuffer * (pos % columns)), y_start + (-ySpaceBuffer * (pos / columns)), 0f);
+    }
+
+
+    //functions for observing an object closer view and description 
+    public void SetObservingItem(Sprite image, string description)
+    {
+        observingImg.sprite = image;
+        this.descriptionText.text = description;
+    }
+
+    public void Clear()
+    {
+        observingImg.sprite = blankImg;
+        this.descriptionText.text = "";
     }
 }
