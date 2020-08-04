@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     private int InteractedWithNPCs;
 
+    public bool debugFeatures;
+
     void Awake()
     {
         //singleton pattern
@@ -32,7 +34,10 @@ public class GameManager : MonoBehaviour
         npcManager = this.gameObject.GetComponent<NPCManager>();
         //startGame = this.gameObject.GetComponent<StartGame>();
 
-        StartGame();
+        if (!debugFeatures)
+        {
+            StartGame();
+        }
     }
 
     public void StartGame()
@@ -40,7 +45,8 @@ public class GameManager : MonoBehaviour
         sceneChanger.LoadScene("MainStreet");
     }
 
-    //THIS METHOD WILL BE CALLED BY ALL OTHER OBJECTS IN THE SCENE. 
+    //THIS METHOD WILL BE CALLED BY ALL OTHER OBJECTS IN THE SCENE.
+    //MainStreet, Pub, Docks, Neighbourhood, PoliceStation
     public void LoadScene(string sceneToLoad)
     {
         sceneChanger.LoadScene(sceneToLoad);
@@ -58,6 +64,11 @@ public class GameManager : MonoBehaviour
     public void SetTime()
     {
         timeManager.SetTime();
+    }
+
+    public void GetDate()
+    {
+        timeManager.GetDate();
     }
 
     public void Encountered(string name)

@@ -75,7 +75,8 @@ public class TimeManager : MonoBehaviour
 
     private void SetDateText()
     {
-        date_Text = day.ToString() + "th " + month + " " + year.ToString();
+        //format: Example: 18th September, 1888
+        date_Text = day.ToString() + "th " + month + ", " + year.ToString();
         date.text = date_Text;
     }
 
@@ -100,4 +101,9 @@ public class TimeManager : MonoBehaviour
             }
         }
     }
+
+    public string GetDate()
+    {
+        return date_Text;
+    } 
 }

@@ -47,31 +47,31 @@ public class SceneChanger : MonoBehaviour
     //different functions for teleporting to each different scene. 
     public void LoadMainStreet()
     {
-        StartCoroutine(Load(0, 1.5f));
+        StartCoroutine(Load(1, 1.5f));
     }
 
     public void LoadPoliceStation()
     {
         //SceneManager.LoadScene(1);
-        StartCoroutine(Load(1, 1.5f));
+        StartCoroutine(Load(2, 1.5f));
     }
 
     public void LoadPub()
     {
         SceneManager.LoadScene(2);
-        StartCoroutine(Load(2, 1.5f));
+        StartCoroutine(Load(3, 1.5f));
     }
 
     public void LoadNeighbourhood()
     {
         SceneManager.LoadScene(3);
-        StartCoroutine(Load(3, 1.5f));
+        StartCoroutine(Load(4, 1.5f));
     }
 
     public void LoadDocks()
     {
         //SceneManager.LoadScene(4);
-        StartCoroutine(Load(4, 1.5f));
+        StartCoroutine(Load(5, 1.5f));
     }
 
     //kind of spaghetti, but all Load methods are overloaded, because functions with a return type cannot be stored in a dictionary (at least not to my pea brained knowledge lmao) 
@@ -99,10 +99,6 @@ public class SceneChanger : MonoBehaviour
             }
         }
 
-        //GameObject teleportObj = GameObject.FindWithTag("Player Teleport Spot");
-        //Debug.Log(teleportObj.name);
-
-        //Vector3 teleportSpot = teleportObj.transform.position;
         PlayerMovement.Instance.SetPosition(teleportSpot);
     }
 }

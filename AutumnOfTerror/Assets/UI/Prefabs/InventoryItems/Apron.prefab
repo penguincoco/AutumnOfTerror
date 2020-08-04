@@ -432,6 +432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   helper: {fileID: 0}
+  item: {fileID: 0}
+  objImage: {fileID: 0}
+  description: 
 --- !u!114 &4948780191792253951
 MonoBehaviour:
   m_ObjectHideFlags: 0
