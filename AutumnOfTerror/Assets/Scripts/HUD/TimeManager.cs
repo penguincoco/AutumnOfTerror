@@ -105,5 +105,10 @@ public class TimeManager : MonoBehaviour
     public string GetDate()
     {
         return date_Text;
-    } 
+    }
+
+    public int GetDay()
+    {
+        return day;
+    }
 }
