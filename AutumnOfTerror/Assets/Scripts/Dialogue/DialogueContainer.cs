@@ -9,6 +9,12 @@ public class DialogueContainer : MonoBehaviour
     Dictionary<string, ObjectTimeAndDialogue> dialogue;
 
     public TextAsset trialJSon;
+
+    public string currentObject;
+    public int currentStage;
+    public bool InRange;
+
+    public static Func<int> getCurrentStage;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +32,15 @@ public class DialogueContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentStage = (int)getCurrentStage?.Invoke();
+        currentObject = Inventory.Instance.GetEquippedObject();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (dialogue.ContainsKey(currentStage.ToString()) && dialogue.ContainsKey(currentObject))
+            {
+                print(dialogue[currentObject].dialogue);
+            }
+        }
     }
 }
 
