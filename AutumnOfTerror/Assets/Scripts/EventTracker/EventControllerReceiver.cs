@@ -10,13 +10,13 @@ public class EventControllerReceiver : MonoBehaviour
     private void OnEnable()
     {
         EventControllerCaller.Act0 += Act0;
-        DialogueContainer.getCurrentStage += ReturnData;
+        DialogueContainer1.getCurrentStage += ReturnData;
     }
 
     private void OnDisable()
     {
         EventControllerCaller.Act0 -= Act0;
-        DialogueContainer.getCurrentStage -= ReturnData;
+        DialogueContainer1.getCurrentStage -= ReturnData;
     }
 
     void Act0()

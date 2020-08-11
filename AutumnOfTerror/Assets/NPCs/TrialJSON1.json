@@ -1,0 +1,16 @@
+{
+  "keyAndDialogueList": [
+    {
+      "objectName": "Apron(Clone)",
+      "dialogue": "This apron seems to be one \nof our only physical clues Abberline. \nWe can start looking at some of the \nfactory and dockworkers in the area, \nsee whether they’d know anything \nabout its origin. "
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "The scissors are pretty damning. \nThis does point us towards someone who \nwould have considerable skill with these. \nMaybe a barber or butcher in the area?"
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}
