@@ -34,6 +34,8 @@ public class Inventory : MonoBehaviour
             Destroy(this.gameObject);
         else
             _instance = this;
+
+        //player starts with a few objects default in their inventory: Police badge and Baton 
     }
 
     void Start()

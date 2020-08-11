@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
+//[RequireComponent(typeof(Button))]
 [RequireComponent(typeof(UIInteraction_Helper))]
 public class UIInteraction : EventTrigger
 {

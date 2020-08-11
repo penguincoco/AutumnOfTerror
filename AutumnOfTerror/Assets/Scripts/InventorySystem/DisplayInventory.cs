@@ -32,6 +32,8 @@ public class DisplayInventory : MonoBehaviour
 
     public TextMeshProUGUI descriptionText;
 
+    public Item[] defaultObjs;
+
     void Awake()
     {
         //singleton pattern
@@ -45,6 +47,15 @@ public class DisplayInventory : MonoBehaviour
     void Start()
     {
         CreateDisplay();
+        SetDefaultItems();
+    }
+
+    public void SetDefaultItems()
+    {
+        foreach (Item obj in defaultObjs)
+        {
+            inventory.AddItem(obj.item);
+        }
     }
 
     public void UpdateDisplay()
