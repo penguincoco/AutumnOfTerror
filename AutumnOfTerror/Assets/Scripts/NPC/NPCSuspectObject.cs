@@ -10,6 +10,6 @@ public class NPCSuspectObject : NPCObject
     {
         base.OnEnable();
         Debug.Log("Awake from Suspect Obj");
-        suspectObjects[0] = "some piece of evidence";
+        //suspectObjects[0] = "some piece of evidence";
     }
 }

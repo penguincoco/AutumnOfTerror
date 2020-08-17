@@ -5,7 +5,7 @@ using System;
 
 public class DialogueContainer : MonoBehaviour
 {
-    public ObjectTimeAndDialogueList objectTimeAndDialogue;
+    private ObjectTimeAndDialogueList objectTimeAndDialogue;
     Dictionary<string, ObjectTimeAndDialogue> dialogue;
 
     public TextAsset trialJSon;
@@ -23,7 +23,7 @@ public class DialogueContainer : MonoBehaviour
         foreach (ObjectTimeAndDialogue ob in objectTimeAndDialogue.objectTimeAndDialogueList)
         {
             dialogue.Add(ob.objectName, ob);
-            dialogue.Add(ob.time, ob);
+            //dialogue.Add(ob.time, ob);
         }
 
         //for(int i = 0; i < objectTimeAndDialogue.)

@@ -1,0 +1,28 @@
+{
+  "keyAndDialogueList": [
+    {
+      "objectName": "",
+      "dialogue": "What can I get for you, mate?"
+    },
+	{
+      "objectName": "Badge(Clone)",
+      "dialogue": "I asked you what you \nwanted to drink. Not what \nyour job was. Don’t need \nthe badge to know you’re a \nbobby."
+    },
+	{
+      "objectName": "Baton(Clone)",
+      "dialogue": "Oye, now, take it easy, mate, \nno need to get violent. I’d \nput that away if I were you. \nBlokes around here don’t \ntake lightly to peelers."
+    },
+	{
+      "objectName": "Apron(Clone)",
+      "dialogue": "Hmm, can’t say we use \naprons with the likes of \nthese around here. But this \napron’s made of leather, I \nreckon it’s from somewhere \ndown by the docks."
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "Can’t say that I do, sorry, \nmate. These look like barber \nscissors."
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}

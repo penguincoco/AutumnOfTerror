@@ -1,0 +1,28 @@
+{
+  "keyAndDialogueList": [
+   {
+      "objectName": "",
+      "dialogue": "Hello, dahling, here for a \ndrink?"
+    },
+	{
+      "objectName": "Badge(Clone)",
+      "dialogue": "Am I supposed to be \nimpressed?"
+    },
+	{
+      "objectName": "Baton(Clone)",
+      "dialogue": "Am I supposed to be \nimpressed?"
+    },
+	{
+      "objectName": "Apron(Clone)",
+      "dialogue": "Well that’s certainly not \nwhat I expected you to ask \nme......Hmm, I reckon it comes \nfrom the docks. I’ve got a \nfriend down there, wears \none just like this."
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "These are barber scissors. \nI’ve got the same pair, \nactually, use ‘em to cut me \nown hair."
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}

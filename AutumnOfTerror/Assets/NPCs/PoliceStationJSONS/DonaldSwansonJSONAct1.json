@@ -1,0 +1,28 @@
+{
+  "keyAndDialogueList": [
+	{
+      "objectName": "",
+      "dialogue": "Morning Inspector. Looks like we’ve \ngot our hands full."
+    },
+	{
+      "objectName": "Badge(Clone)",
+      "dialogue": "That signifies all the authority \nof this police department. Although \nsome people might not appreciate \nyou showing that off."
+    },
+	{
+      "objectName": "Baton(Clone)",
+      "dialogue": "Well yes Abberline, Use it wisely. \nYou can probably get a few people \ntalking by flashing that."
+    },
+    {
+      "objectName": "Apron(Clone)",
+      "dialogue": "This apron seems to be one \nof our only physical clues Abberline. \nWe can start looking at some of the \nfactory and dockworkers in the area, \nsee whether they’d know anything \nabout its origin. "
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "The scissors are pretty damning. \nThis does point us towards someone who \nwould have considerable skill with these. \nMaybe a barber or butcher in the area?"
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}

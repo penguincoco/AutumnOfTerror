@@ -7,16 +7,21 @@ public class EventControllerReceiver : MonoBehaviour
 {
     public MasterEventTracker masterEventTracker;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void OnEnable()
     {
         EventControllerCaller.Act0 += Act0;
-        DialogueContainer.getCurrentStage += ReturnData;
+        DialogueContainer1.getCurrentAct += ReturnData;
     }
 
     private void OnDisable()
     {
         EventControllerCaller.Act0 -= Act0;
-        DialogueContainer.getCurrentStage -= ReturnData;
+        DialogueContainer1.getCurrentAct -= ReturnData;
     }
 
     void Act0()

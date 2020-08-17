@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aefe8c12a6970d4a91dd6ff0641dc01, type: 3}
   m_Name: C.I Donald Swanson
   m_EditorClassIdentifier: 
-  name: Donald Swanson
-  sex: Male
-  address: Police Station
-  occupation: Chief Inspector
-  dialogue: []
-  NPCFile: {fileID: 0}
+  NPCData:
+  - "Donald Swanson\r"
+  - "Male\r"
+  - "Chief Inspector\r"
+  - "Police Station\r"
+  - 
+  NPCFile: {fileID: 4900000, guid: 1714c762d56d6f540ac994acb92d1eb5, type: 3}
+  name: "Donald Swanson\r"
+  sex: "Male\r"
+  occupation: "Police Station\r"
+  address: "Chief Inspector\r"
+  suspectEvidence: []
