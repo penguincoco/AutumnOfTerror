@@ -10,17 +10,22 @@ public class DialogueContainer1 : MonoBehaviour
 
 
     public TextAsset currentJSONFile;
+    public TextAsset act1JSONFile;
+    public TextAsset act2JSONFile;
+    public TextAsset act3JSONFile;
 
 
     public string currentObject;
     public int currentStage;
-    public bool InRange;
+    public bool inRange;
 
-    public static Func<int> getCurrentStage;
+    public static Func<int> getCurrentAct;
 
     public TextMesh textObj;
 
     public Inventory inventory;
+
+    public Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +44,32 @@ public class DialogueContainer1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //currentStage = (int)getCurrentStage?.Invoke();
+        currentStage = (int)getCurrentAct?.Invoke();
         //currentObject = Inventory.Instance.GetEquippedObject();
-        currentObject = inventory.equippedObj;
-        if (Input.GetKeyDown(KeyCode.E))
+        if (inventory && inventory.equippedObj != null)
+        {
+            currentObject = inventory.equippedObj;
+        }
+
+        if (currentStage == 1)
+        {
+            currentJSONFile = act1JSONFile;
+        }
+        if (currentStage == 2)
+        {
+            currentJSONFile = act2JSONFile;
+        }
+        if (currentStage == 3)
+        {
+            currentJSONFile = act3JSONFile;
+        }
+
+        if (inRange)
+        {
+            InRange();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && inRange == true)
         {
             Debug.Log("E");
             if (dialogue.ContainsKey(currentObject))
@@ -50,6 +77,38 @@ public class DialogueContainer1 : MonoBehaviour
                 print(dialogue[currentObject].dialogue);
                 textObj.text = dialogue[currentObject].dialogue;
             }
+        }
+
+        InventorySelect();
+    }
+
+    void InRange()
+    {
+        transform.LookAt(playerTransform);
+    }
+
+    void InventorySelect()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            textObj.text = null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRange = false;
+            textObj.text = null;
         }
     }
 }

@@ -1,0 +1,28 @@
+{
+  "keyAndDialogueList": [
+    {
+      "objectName": "",
+      "dialogue": "Hello, officer, to what do I \nowe the pleasure tonight \nMister...?"
+    },
+	{
+      "objectName": "Badge(Clone)",
+      "dialogue": "I asked your name, not \nyour job. I can see you’re a \npeelie."
+    },
+	{
+      "objectName": "Baton(Clone)",
+      "dialogue": "I asked your name, not \nyour job. I can see you’re a \npeelie."
+    },
+	{
+      "objectName": "Apron(Clone)",
+      "dialogue": "Ah, I ought to, it’s just like \nmy apron, see? I work as a \nmeat packer and driver \ndown by the docks."
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "What good are scissors \nlike these? Look nuthin’ like \nthe kind we use at work, \nthese wouldn’t be able to \ncut through anything."
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}

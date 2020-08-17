@@ -1,0 +1,28 @@
+{
+  "keyAndDialogueList": [
+    {
+      "objectName": "",
+      "dialogue": "Care for a drink, my dear peelie?"
+    },
+	{
+      "objectName": "Badge(Clone)",
+      "dialogue": "Lissen, MUTTON SHUNTER, I ain’t ‘fraid of you or your badge"
+    },
+	{
+      "objectName": "Baton(Clone)",
+      "dialogue": "Lissen, MUTTON SHUNTER, I ain’t ‘fraid of you or your baton"
+    },
+	{
+      "objectName": "Apron(Clone)",
+      "dialogue": "Mmm, oye, you found me \napron. O? This ain’t mine, \nHAH! I got fired from the \ndocks months ago. Oh, \nGeorge, looks like you’ve \nhad yourself one too many \nneck oils!"
+    },
+    {
+      "objectName": "Scissors(Clone)",
+      "dialogue": "HAH, I used to have a pair \nof scissors like dese! Me old \nfather used to be a barber. \nThought I could be like him \nonce, went off cutting me \nown hair, nearly took me \nthumb off!"
+    },
+    {
+      "objectName": "eee",
+      "dialogue": "fff"
+    }
+  ]
+}

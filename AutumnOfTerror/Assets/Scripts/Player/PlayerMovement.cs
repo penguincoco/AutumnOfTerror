@@ -54,4 +54,20 @@ public class PlayerMovement : MonoBehaviour
     {
         this.gameObject.transform.position = newPos;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Ramp")
+        {
+            speed = 14;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "Ramp")
+        {
+            speed = 7;
+        }
+    }
 }

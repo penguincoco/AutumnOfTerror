@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abce6d5150c94f344a0ecd6d882c2e61, type: 3}
-  m_Name: Master Event Tracker
+  m_Script: {fileID: 11500000, guid: 9ce8e142d856e54488c9fca6e8dc6343, type: 3}
+  m_Name: Photograph2
   m_EditorClassIdentifier: 
-  currentAct: 1
-  currentActEvent: 0
+  prefab: {fileID: 3538357442695984676, guid: ba7c7d5ddefa09c4fae894cdb27a9ecc, type: 3}
+  name: Photograph2
+  description: description text
