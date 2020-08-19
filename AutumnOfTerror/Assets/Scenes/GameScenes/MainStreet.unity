@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -50127,7 +50127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042439584}
   m_Layer: 0
-  m_Name: FromPoliceStation_Awake
+  m_Name: FromPoliceStation
   m_TagString: Player Teleport Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63913,8 +63913,8 @@ Transform:
   - {fileID: 4761697173465921502}
   - {fileID: 2034698810}
   - {fileID: 1994452886}
-  - {fileID: 1950362396}
   - {fileID: 2058041737}
+  - {fileID: 1950362396}
   m_Father: {fileID: 801916384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -33.461002, z: 0}
