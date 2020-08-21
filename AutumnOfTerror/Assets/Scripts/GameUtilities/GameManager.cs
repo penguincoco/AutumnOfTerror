@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        sceneChanger.LoadScene("MainStreet");
+        sceneChanger.LoadScene("PoliceStation");
     }
 
     //THIS METHOD WILL BE CALLED BY ALL OTHER OBJECTS IN THE SCENE.

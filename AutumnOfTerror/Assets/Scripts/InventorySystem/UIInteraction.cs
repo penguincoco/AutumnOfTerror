@@ -30,6 +30,11 @@ public class UIInteraction : EventTrigger
             //on the gameobject itself is the scriptable object. the scriptable object has a prefab field on it called Prefab which is the image in question (holy moly) 
     }
 
+    public void UnequipObj()
+    {
+        //unequip objects
+        Inventory.Instance.SetEquippedObject("");
+    }
 
     //when an object 
     public void SetName(string name)
