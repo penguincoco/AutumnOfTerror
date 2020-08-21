@@ -51,9 +51,10 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.velocity = input * speed + Physics.gravity * 0.69f;
     }
 
-    public void SetPosition(Vector3 newPos)
+    public void SetPosition(Vector3 newPos, Vector3 newRotation)
     {
         this.gameObject.transform.position = newPos;
+        this.gameObject.transform.eulerAngles = newRotation;
     }
 
     private void OnCollisionEnter(Collision collision)
