@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidBody.velocity = new Vector3(input.x * speed, rigidBody.velocity.y, input.z * speed);
+        //rigidBody.velocity = new Vector3(input.x * speed, rigidBody.velocity.y, input.z * speed);
+        rigidBody.velocity = input * speed + Physics.gravity * 0.69f;
     }
 
     public void SetPosition(Vector3 newPos, Vector3 newRotation)
