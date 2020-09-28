@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private int InteractedWithNPCs;
 
     public bool debugFeatures;
+    public string sceneToLoad;                          //NUKE THESE CHANGES BEFORE COMMITTING. THIS WILL CAUSE A MERGE CONFLICT
 
     void Awake()
     {
@@ -42,7 +43,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        sceneChanger.LoadScene("Pub");
+        //sceneChanger.LoadScene("Pub");    //restore this
+        sceneChanger.LoadScene(sceneToLoad);            //NUKE THESE CHANGES BEFORE COMMITTING. THIS WILL CAUSE A MERGE CONFLICT
     }
 
     //THIS METHOD WILL BE CALLED BY ALL OTHER OBJECTS IN THE SCENE.
