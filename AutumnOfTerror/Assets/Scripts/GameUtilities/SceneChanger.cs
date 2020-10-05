@@ -83,7 +83,7 @@ public class SceneChanger : MonoBehaviour
     //This HAS to be a coroutine because FindWithTag does not work the immediate second after loading a scene. 
     private IEnumerator Load(int sceneIndex, float waitTime)
     {
-        StartCoroutine(fadeImg.GetComponent<FadeObj>().Fade(true));
+        //StartCoroutine(fadeImg.GetComponent<FadeObj>().Fade(true));
 
         yield return new WaitForSeconds(2.5f);
 
