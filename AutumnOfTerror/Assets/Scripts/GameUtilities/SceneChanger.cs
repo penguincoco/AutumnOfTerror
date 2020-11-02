@@ -26,16 +26,16 @@ public class SceneChanger : MonoBehaviour
 
     public GameObject fadeImg;
 
-    void Awake()
-    {
-        //singleton pattern
-        if (_instance != null && _instance != this)
-            Destroy(this.gameObject);
-        else
-            _instance = this;
-    }
+    //void Awake()
+    //{
+    //    //singleton pattern
+    //    if (_instance != null && _instance != this)
+    //        Destroy(this.gameObject);
+    //    else
+    //        _instance = this;
+    //}
 
-    void Start()
+    void Awake()
     {
         sceneDict.Add("MainStreet", LoadMainStreet);
         sceneDict.Add("PoliceStation", LoadPoliceStation);
@@ -63,13 +63,13 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadPub()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
         StartCoroutine(Load(3, waitTime));
     }
 
     public void LoadNeighbourhood()
     {
-        SceneManager.LoadScene(3);
+        //SceneManager.LoadScene(3);
         StartCoroutine(Load(4, waitTime));
     }
 
@@ -81,16 +81,19 @@ public class SceneChanger : MonoBehaviour
 
     //kind of spaghetti, but all Load methods are overloaded, because functions with a return type cannot be stored in a dictionary (at least not to my pea brained knowledge lmao) 
     //This HAS to be a coroutine because FindWithTag does not work the immediate second after loading a scene. 
-    //Idea: This coroutine can be general. Every other function can call it, every other function just have to give it a number parameter for the scene to load! :o 
     private IEnumerator Load(int sceneIndex, float waitTime)
     {
-        StartCoroutine(fadeImg.GetComponent<FadeObj>().Fade(true));
+        //StartCoroutine(fadeImg.GetComponent<FadeObj>().Fade(true));
 
         yield return new WaitForSeconds(2.5f);
 
         //transition to another scene
         string currSceneName = SceneManager.GetActiveScene().name;
+
+        Debug.Log("Currently in: " + currSceneName);
+
         SceneManager.LoadScene(sceneIndex);
+
         yield return new WaitForSeconds(waitTime);
 
         //some scenes have multiple entry points (like the main street, oof)
@@ -107,6 +110,7 @@ public class SceneChanger : MonoBehaviour
             if (teleportObj.name.Contains(currSceneName))
             {
                 teleportSpot = teleportObj.transform.position;
+                Debug.Log("jumping to: " + teleportSpot);
                 newRotation = teleportObj.transform.rotation.eulerAngles;
                 break;
             }
