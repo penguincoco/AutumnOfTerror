@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rigidBody;
     private Vector3 input;
 
-    public float speed;
+    private float speed;
+    public float defaultSpeed;
+    public float rampSpeed;
 
     void Awake()
     {
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        speed = defaultSpeed;
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -61,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.transform.tag == "Ramp")
         {
-            speed = 14;
+            speed = rampSpeed;
         }
     }
 
@@ -69,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.transform.tag == "Ramp")
         {
-            speed = 7;
+            speed = defaultSpeed;
         }
     }
 }
